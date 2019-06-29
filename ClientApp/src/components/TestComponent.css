@@ -1,0 +1,9 @@
+.center {
+    display: flex;
+    font-size: 28px;
+    justify-content: center;
+}
+
+.random {
+    color: orange;
+}
