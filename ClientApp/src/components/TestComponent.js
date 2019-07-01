@@ -10,11 +10,23 @@ export class TestComponent extends Component {
       //handleClick: this.handleClick.bind(this)
     }
 
-    handleClick() {
+    handleClick = () => { //arrow function to make binding to state
       console.log('button clicked!');
+      console.log(this.state,'state');
       this.setState({
-        age: this.age + 1
+        age: this.state.age + 1
       });
+    }
+
+    handleChange = (e) => {
+      this.setState({
+        name: e.target.value
+      })
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault();
+      console.log('form submit!');
     }
 
     render() {
@@ -25,6 +37,10 @@ export class TestComponent extends Component {
                 <span className="random">{ this.state.name }, age is: { this.state.age } </span>
               </div>
               <button onClick={this.handleClick}>add age</button>
+              <form id="form1" onSubmit={this.handleSubmit}>
+                <input type='text' onChange={this.handleChange} />
+                <button>submit</button>
+              </form>
             </div>
           );
     }
