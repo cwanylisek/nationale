@@ -59,4 +59,5 @@ class Game extends React.Component {
 }
 
 export { Game, Board, Square };
+    //jeden eksport na plik, wyeksportowanie wszystkich componentów
 
