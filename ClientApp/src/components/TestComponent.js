@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './TestComponent.css';
 
 
-//kolejnoœæ definicji klas jest wa¿na
-//export dynamiczny przy ka¿dej klasie osobno
+//kolejnoï¿½ï¿½ definicji klas jest waï¿½na
+//export dynamiczny przy kaï¿½dej klasie osobno
 export class User extends Component {
     constructor(email, name) {
         super(email, name);
@@ -28,7 +28,7 @@ export class TestComponent extends Component {
     displayName = TestComponent.name
     renderUser(i, j) {
         return <User email={i} name={j} />;
-    }//definicja metody, tworz¹cej obiekt zewnêtrznej klasy
+    }//definicja metody, tworzï¿½cej obiekt zewnï¿½trznej klasy
     state = {
       name: 'Bartek',
         age: 25
@@ -56,7 +56,7 @@ export class TestComponent extends Component {
 
     render() {
         let renderUserOne = new User("aaa", "bbb");//utworzenei obiektu bezposrednio z klasy
-        let UserTwo = this.renderUser("blabla", "bbbblabla");//utworzenie obiektu z metody renderUser, dostêp przez props
+        let UserTwo = this.renderUser("blabla", "bbbblabla");//utworzenie obiektu z metody renderUser, dostï¿½p przez props
         return (
             <div>
               <div className="center">
@@ -72,7 +72,8 @@ export class TestComponent extends Component {
                     {console.log(UserTwo.props.name)}
                     {console.log(renderUserOne.email)}
                 </div>
+              {this.props.something}
             </div>
-          );//wyœwietlenie danych z propsa
+          );//wyï¿½wietlenie danych z propsa
     }
 }
