@@ -38,9 +38,15 @@ export class NavMenu extends Component {
                 Test Component
               </NavItem>
             </LinkContainer>
+            <LinkContainer to={'/mineJS'}>
+              <NavItem>
+                Mine JS
+              </NavItem>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     );
   }
 }
+//dodanie link containera do nawigacji, link do pliku
