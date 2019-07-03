@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AddUser } from './AddUser';
 import './TestComponent.css';
 
 
@@ -30,8 +31,11 @@ export class TestComponent extends Component {
         return <User email={i} name={j} />;
     }//definicja metody, tworz�cej obiekt zewn�trznej klasy
     state = {
-      name: 'Bartek',
-        age: 25
+      users: [
+        { name: 'Bartek', age: 25, email:"test@gmail.com" },
+        { name: 'Krzyś', age: 30, email:"krzyszK@gmail.com"}
+      ]
+      
       //handleClick: this.handleClick.bind(this)
     }
 
@@ -52,6 +56,18 @@ export class TestComponent extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       console.log('form submit!');
+      let fruitArray = ['apple', 'banana', 'strawberry'];
+      let vegetablesArray = ['carrot', 'tomato', 'pickle'];
+      let spreadOperatorExample = [vegetablesArray, ...fruitArray]; //spread operator '...' (kopiuje i rozdziela elementy z tablicy)
+      console.log(spreadOperatorExample);
+    }
+
+    componentDidMount() {
+      console.log('didMount')
+    }
+
+    componentDidUpdate() {
+      console.log('didUpdate');
     }
 
     render() {
@@ -61,18 +77,21 @@ export class TestComponent extends Component {
             <div>
               <div className="center">
                 <p>Dynamic values to display:</p>
-                <span className="random">{ this.state.name }, age is: { this.state.age } </span>
+                <div className="center">
+                  <span className="random">{ this.state.users.name }, age is: { this.state.users.age } </span>
+                </div>
               </div>
               <button onClick={this.handleClick}>add age</button>
               <form id="form1" onSubmit={this.handleSubmit}>
                 <input type='text' onChange={this.handleChange} />
                 <button>submit</button>
-                </form>
-                <div>
-                    {console.log(UserTwo.props.name)}
-                    {console.log(renderUserOne.email)}
-                </div>
-              {this.props.something}
+              </form>
+              <div>
+                  {console.log(UserTwo.props.name)}
+                  {console.log(renderUserOne.email)}
+              </div>
+              <AddUser />
+              <p style={{marginTop:100+'px'}}>{this.props.testProp}</p> {/* React inline styling */}
             </div>
           );//wy�wietlenie danych z propsa
     }

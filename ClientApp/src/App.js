@@ -19,11 +19,11 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <Route path='/fetchdata' component={FetchData} />
-        <Route path='/testcomponent' render={(props) => <TestComponent {...props} something="yes" />} /> {/* route with props via render function */}
-            <Route path='/testcomponent' component={User} />
-            <Route path='/mineJS' component={Game} />
-            <Route path='/mineJS' component={Board} />
-            <Route path='/mineJS' component={Square} />
+        <Route path='/testcomponent' render={(props) => <TestComponent {...props} testProp="noWitam" />} /> {/* route with props via render function */}
+        <Route path='/testcomponent' component={User} />
+        <Route path='/mineJS' component={Game} />
+        <Route path='/mineJS' component={Board} />
+        <Route path='/mineJS' component={Square} />
       </Layout>
     );
   }
